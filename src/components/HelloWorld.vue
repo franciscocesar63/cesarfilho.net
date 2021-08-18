@@ -1,58 +1,194 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+  <div style="margin-top: -20px; width: 100%">
+    <!-- <b-sidebar id="sidebar-1" shadow>
+
+    </b-sidebar> -->
+
+    <div class="row py-3">
+      <!-- Menu sidebar abaixo -->
+      <div class="col-3" id="sticky-sidebar" style="background-color: #20b2aa">
+        <div class="sticky-top mt-4">
+          <div class="fotoPropri">
+            <img
+              src="../assets/eu.jpg"
+              alt="Francisco César da Silva Filho"
+              class="img-fluid rounded-circle"
+              id="fotoPropria"
+              style="width: 55%"
+            />
+          </div>
+          <div class="border-top mt-2"></div>
+
+          <b-nav vertical class="navvertical">
+            <b-nav-item v-scroll-to="'#formacao-academica'"><b>Formação Acadêmica</b></b-nav-item>
+            <b-nav-item v-scroll-to="'#experiencia-profissional'" @click="hide"
+              ><b>Experiência Profissional</b></b-nav-item
+            >
+            <b-nav-item v-scroll-to="'#projetos'" @click="hide"><b>Projetos</b></b-nav-item>
+            <b-nav-item v-scroll-to="'#cursos'" @click="hide"><b>Cursos</b></b-nav-item>
+          </b-nav>
+          <div class="mt-5">
+            <a href="http://www.github.com/franciscocesar63" target="_blank"
+              ><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'github' }" size="lg"
+            /></a>
+
+            <a href="http://www.linkedin.com/in/fcocesar63" target="_blank"
+              ><font-awesome-icon
+                :icon="{ prefix: 'fab', iconName: 'linkedin' }"
+                size="lg"
+            /></a>
+            <a href="http://www.facebook.com/fcocesar63" target="_blank">
+              <font-awesome-icon
+                :icon="{ prefix: 'fab', iconName: 'facebook' }"
+                size="lg"
+              />
+            </a>
+            <a href="http://www.instagram.com/fcocesar63" target="_blank">
+              <font-awesome-icon
+                :icon="{ prefix: 'fab', iconName: 'instagram' }"
+                size="lg"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- contexto abaixo -->
+      </div>
+      <div class="col" id="main">
+        <div id="titulo" class="mt-5">
+          <h1 id="subTitulo" class="fw-bold">Francisco César da Silva Filho</h1>
+          <h5 id="subTitulo">Idade: 23 anos</h5>
+          <h5 id="subTitulo">
+            <img src="../assets/icons/email.png" class="icons" />
+            franciscocesar888@gmail.com
+          </h5>
+          <h5 id="subTitulo">
+            <img src="../assets/icons/casado.png" class="icons" /> Casado
+          </h5>
+        </div>
+
+        <b-row class="mt-5">
+          <b-col>
+            <div id="formacao-academica">
+              <h2 style="text-align: left" class="fw-bold">Formação Acadêmica</h2>
+              <ul class="ta-left">
+                <li class="curso">Bacharelado em Ciência da Computação</li>
+              </ul>
+            </div>
+          </b-col>
+          <b-col class="border-left">
+            <h2 class="fw-bold">Skills</h2>
+            <p style="font-style: italic; font-size: 15px">
+              HTML5 / CSS3 / BOOTSTRAP JAVASCRIPT / PHP / DART / JAVA / HIBERNATE / PYTHON
+              / VISUAL CODE NETBEANS / FLUTTER / GIT INTELLIJ IDEA / GITHUB GITLAB /
+              TRELLO / MYSQL / POSTGRESQL / MONGO DB / FIREBASE / FTP / BLENDER / MATLAB /
+              DATA SCIENCE / EXCEL AVANÇADO / VUE JS
+            </p>
+          </b-col>
+        </b-row>
+
+        <div id="experiencia-profissional" class="mb-5">
+          <h2 style="text-align: left" class="mt-5 fw-bold">
+            Experiência Profissional (CLT)
+          </h2>
+
+          <b-row>
+            <b-col>
+              <b-list-group>
+                <b-list-group-item button @click="alterarDescricao(2)"
+                  >Sovis - Dez/2020 - <b>ATUAL</b></b-list-group-item
+                >
+                <b-list-group-item button @click="alterarDescricao(1)"
+                  >Ceneged - Set/2019 - Dez/2020</b-list-group-item
+                >
+              </b-list-group>
+            </b-col>
+            <b-col :style="mostrarDescricao ? 'border:solid;border-radius: 5px' : ''"
+              ><span> {{ descricaoTrabalho }} </span></b-col
+            >
+          </b-row>
+        </div>
+        <div id="projetos">
+          <h2 class="mb-5"><b>Projetos</b></h2>
+          <a href="http://sysauto.cesarfilho.net/login.php" target="_blank">
+            <img src="../assets/logo-sysauto.png" alt="SysAuto" /> </a
+          ><br />
+          <img class="mt-3 mb-5" src="../assets/sysauto.png" alt="" style="width: 80%" />
+
+          <a href="http://cepmap.cesarfilho.net/" target="_blank">
+            <img src="../assets/viacep.png" alt="CepMap" /> </a
+          ><br />
+          <img class="mt-3" src="../assets/cepmap.png" alt="" style="width: 80%" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
+  data() {
+    return {
+      descricaoTrabalho: "",
+      mostrarDescricao: false,
+    };
+  },
+
+  methods: {
+    alterarDescricao(id) {
+      if (id == 1) {
+        this.descricaoTrabalho =
+          "ASSISTENTE ADMINISTRATIVO. RESPONSÁVEL PELA GESTÃO DE 15 EQUIPES DE CARROS E RELATÓRIOS DE FATURAMENTO. ALÉM DE RESPONSABILIDADES CORPORATIVAS.";
+        this.mostrarDescricao = true;
+      } else if (id == 2) {
+        this.descricaoTrabalho =
+          "SUPORTE DO SISTEMA MOBILE. ACOMPANHAMENTO DE FATURAMENTO DE APARELHOS, RELATÓRIOS QUINZENAIS" +
+          " E MENSAIS DE FATURAMENTO. INTEGRAÇÃO HOME OFFICE, RESPONSABILIDADES IGUAIS MAS COM FUNÇÃO HOME OFFICE.";
+        this.mostrarDescricao = true;
+      } else {
+        this.descricaoTrabalho = "";
+        this.mostrarDescricao = false;
+      }
+    },
+    goToPage(url) {
+      window.location.href = url;
+    },
+  },
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.container {
+  width: 80%;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.icons {
+  width: 2%;
+  vertical-align: middle;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.ta-left {
+  text-align: left;
+}
+
+li.curso {
+  list-style: none;
+  font-size: 20px;
+}
+
+li.curso:before {
+  content: "·";
+  font-size: 120px;
+  vertical-align: middle;
+  line-height: 20px;
+}
+.border-left {
+  border-left: 1px;
+  border-left: 2px dotted;
+  border-left: medium dashed green;
 }
 a {
-  color: #42b983;
+  text-decoration: none;
+  color: black;
+  margin-right: 3px;
 }
 </style>
